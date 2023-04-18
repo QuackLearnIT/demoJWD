@@ -2,6 +2,7 @@ package fa.training.demojwd;
 
 import java.io.*;
 
+import fa.training.demojwd.model.util.HibernateConnectionConfig;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
@@ -15,6 +16,7 @@ public class HelloServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
+        HibernateConnectionConfig.getSession();
 
         // Hello
         PrintWriter out = response.getWriter();
